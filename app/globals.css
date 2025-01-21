@@ -17,5 +17,17 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Kanit", Arial, Helvetica, sans-serif;
+}
+
+.zoomImg {
+  overflow: hidden;
+
+  & img:hover {
+      transform: scale(1.1);
+      transition: .3s;
+  }
+    & img:not(:hover) {
+        transition: .3s;
+    }
 }
