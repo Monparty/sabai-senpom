@@ -1,8 +1,9 @@
 export default function BoxFilter() {
     return (
-        <div className="w-3/12 py-3">
+        <div className="py-3 bg-white opacity-70">
             <div className="pb-5 border-b">
                 <select className="border w-full p-2 rounded-sm font-light text-sm">
+                    <option className="font-light text-sm">-</option>
                     <option className="font-light text-sm">111111</option>
                     <option className="font-light text-sm">22222</option>
                     <option className="font-light text-sm">3333333</option>

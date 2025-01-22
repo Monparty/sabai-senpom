@@ -42,25 +42,25 @@ export default function Home() {
       </section>
       <TitleSection title1={'ทำไมต้องทำผม กับ'} title2={'Sabai Senpom'} />
       <section className="grid grid-cols-1  md:grid-cols-3 gap-8 p-10 align-top">
-        {Object.entries(cardItem).map(([key, card], index) => (
-          <Card key={index} icon={card.icon} title={card.title} detail={card.detail} />
+        {Object.values(cardItem).map((card) => (
+          <Card key={card.id} {...card} />
         ))}
       </section>
       <TitleSection title1={'ราคาค่าบริการของร้าน'} title2={'Sabai Senpom'} />
       <section className="p-10">
-        <div>
-          {Object.entries(servicePrice).map(([key, service], index) => (
-            <Service key={index} name={service.name} detail={service.detail} price={service.price} />
-          ))}
-        </div>
+        {Object.values(servicePrice).map((service) => (
+          <Service key={service.id} {...service} />
+        ))}
       </section>
-      <CardFull 
-        img={p1} 
-        title1={"ประวัติร้าน"}
-        title2={" Sabai Senpom"}
-        detail={"แค่ชื่อก็โหดแล้วสำหรับ ประคำดีควาย และบอกได้เลยว่าสรรพคุณก็โหดไม่แพ้กันเลยค่ะ เพราะน้ำสกัดประคำดีควายมีสรรพคุณช่วยลดรังแค และช่วยฆ่าเชื้อโรคบนหนังศีรษะ ทั้งเชื้อรา และแบคทีเรียที่เป็นตัวการผมร่วงได้เป็นอย่างดีเลยนะคะสาวๆ ขา นอกจากมุมโหดๆ ของนางแล้ว ประคำดีควายยังมีมุมสวยๆ อยู่ด้วยนะ ซึ่งก็คือช่วยให้ผมเงางามนั่นเอง เชื่อเถอะ…ว่าดีมากมาย"} 
-        textBtn={"ดูเพิ่มเติม"} 
-      />
+      <div className="p-10 bg-blue-50">
+        <CardFull 
+          img={p1} 
+          title1={"ประวัติร้าน"}
+          title2={" Sabai Senpom"}
+          detail={"แค่ชื่อก็โหดแล้วสำหรับ ประคำดีควาย และบอกได้เลยว่าสรรพคุณก็โหดไม่แพ้กันเลยค่ะ เพราะน้ำสกัดประคำดีควายมีสรรพคุณช่วยลดรังแค และช่วยฆ่าเชื้อโรคบนหนังศีรษะ ทั้งเชื้อรา และแบคทีเรียที่เป็นตัวการผมร่วงได้เป็นอย่างดีเลยนะคะสาวๆ ขา นอกจากมุมโหดๆ ของนางแล้ว ประคำดีควายยังมีมุมสวยๆ อยู่ด้วยนะ ซึ่งก็คือช่วยให้ผมเงางามนั่นเอง เชื่อเถอะ…ว่าดีมากมาย"} 
+          textBtn={"ดูเพิ่มเติม"} 
+        />
+      </div>
       <section className="grid grid-flow-row md:w-full md:flex md:justify-between gap-5 p-10">
         <Bigcard 
             icon={<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"><path fill="#2563eb" d="m9 7l1-2V4H9V2h6q.425 0 .713.288T16 3v1l-1 2h-3V5l-2 2zM8 22v-6.85q0-.275.088-.587T8.3 14L12 7h3q.35.35.675.938T16 9v13zm2-2h4V9h-.8L10 15.1zm0 0h4z"/></svg>} 

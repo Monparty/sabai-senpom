@@ -14,7 +14,7 @@ export default function Card({ icon, title, detail }) {
         <div className="flex justify-center mb-4 text-2xl text-center">
           {title}
         </div>
-        <div>
+        <div className='font-light'>
           {detail}
         </div>
       </div>

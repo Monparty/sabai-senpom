@@ -14,7 +14,7 @@ export default function Bigcard({icon, title, img, detail}) {
               {icon}
             </div>
             <h2 className="py-4 text-2xl text-blue-600">{title}</h2>
-            <p className="mb-4">{detail}</p>
+            <p className="mb-4 font-light">{detail}</p>
           </div>
           <div data-aos="fade-up" className="w-full zoomImg rounded-xl">
             <Image src={img} className="w-full" />

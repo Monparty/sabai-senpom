@@ -18,35 +18,35 @@ export default function Footer() {
                 </div>
                 <div data-aos="fade-up" className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3 lg:gap-10">
                     <div>
-                        <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">บริการของเรา</h2>
+                        <h2 className="mb-6 text-sm font-medium text-gray-900 uppercase dark:text-white">บริการของเรา</h2>
                         <ul className="text-gray-500 dark:text-gray-400 font-medium">
                             <li className="mb-4">
-                                <Link href="/" className="hover:underline">ตัดผม</Link>
+                                <Link href="/" className="hover:underline font-light">ตัดผม</Link>
                             </li>
                             <li>
-                                <Link href="/" className="hover:underline">ทำเคมี</Link>
+                                <Link href="/" className="hover:underline font-light">ทำเคมี</Link>
                             </li>
                         </ul>
                     </div>
                     <div>
-                        <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">ข่าวสาร</h2>
+                        <h2 className="mb-6 text-sm font-medium text-gray-900 uppercase dark:text-white">ข่าวสาร</h2>
                         <ul className="text-gray-500 dark:text-gray-400 font-medium">
                             <li className="mb-4">
-                                <Link href="/" className="hover:underline ">บริการใหม่</Link>
+                                <Link href="/" className="hover:underline font-light">บริการใหม่</Link>
                             </li>
                             <li>
-                                <Link href="/" className="hover:underline">สินค้าใหม่</Link>
+                                <Link href="/" className="hover:underline font-light">สินค้าใหม่</Link>
                             </li>
                         </ul>
                     </div>
                     <div>
-                        <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">ติดต่อเรา</h2>
+                        <h2 className="mb-6 text-sm font-medium text-gray-900 uppercase dark:text-white">ติดต่อเรา</h2>
                         <ul className="text-gray-500 dark:text-gray-400 font-medium">
                             <li className="mb-4">
-                                <Link href="#" className="hover:underline">LINE</Link>
+                                <Link href="#" className="hover:underline font-light">LINE</Link>
                             </li>
                             <li>
-                                <Link href="#" className="hover:underline">Facebook</Link>
+                                <Link href="#" className="hover:underline font-light">Facebook</Link>
                             </li>
                         </ul>
                     </div>

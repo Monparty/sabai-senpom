@@ -22,17 +22,17 @@ export default function ContactSection() {
         <section className='bg-blue-50 p-10'>
             <div className='text-center'>
                 <h2 data-aos="fade-up" className='text-4xl font-semibold'>เสียงตอบรับจากผู้ใช้บริการ</h2>
-                <h3 data-aos="fade-up" className='text-xl p-10'>แค่ชื่อก็โหดแล้วสำหรับ ประคำดีควาย และบอกได้เลยว่าสรรพคุณก็โหดไม่แพ้กันเลยค่ะ</h3>
+                <h3 data-aos="fade-up" className='text-xl p-10 font-light'>แค่ชื่อก็โหดแล้วสำหรับ ประคำดีควาย และบอกได้เลยว่าสรรพคุณก็โหดไม่แพ้กันเลยค่ะ</h3>
             </div>
             <div className='text-center w-full flex justify-center px-4 lg:px-44'>
-                <button data-aos="fade-up" className="w-full px-2 py-2 focus:bg-blue-200 hover:bg-blue-200 md:px-12 text-blue-800 mb-10 cursor-pointer outline-none rounded-l-lg" data-aos-delay="50" onClick={() => {setText(textDesc[0]); setDisplay('#bfdbfe')}} style={{background: display}}>สระไดร์</button>
-                <button data-aos="fade-up" className="w-full px-2 py-2 focus:bg-blue-200 hover:bg-blue-200 md:px-12 bg-blue-100 text-blue-800 mb-10 cursor-pointer" data-aos-delay="100" onClick={() => {setText(textDesc[1]); setDisplay('#dbeafe')}} >ทำเคมี</button>
-                <button data-aos="fade-up" className="w-full px-2 py-2 focus:bg-blue-200 hover:bg-blue-200 md:px-12 bg-blue-100 text-blue-800 mb-10 cursor-pointer" data-aos-delay="150" onClick={() => {setText(textDesc[2]); setDisplay('#dbeafe')}}>ยืดผม</button>
-                <button data-aos="fade-up" className="w-full px-2 py-2 focus:bg-blue-200 hover:bg-blue-200 md:px-12 bg-blue-100 text-blue-800 mb-10 cursor-pointer rounded-r-lg" data-aos-delay="150" onClick={() => {setText(textDesc[3]); setDisplay('#dbeafe')}}>ดัดผม</button>
+                <button data-aos="fade-up" className="w-full px-2 py-2 focus:bg-blue-200 md:px-12 text-blue-800 mb-10 cursor-pointer outline-none rounded-l-lg" data-aos-delay="50" onClick={() => {setText(textDesc[0]); setDisplay('#bfdbfe')}} style={{background: display}}>สระไดร์</button>
+                <button data-aos="fade-up" className="w-full px-2 py-2 focus:bg-blue-200 md:px-12 bg-blue-100 text-blue-800 mb-10 cursor-pointer" data-aos-delay="100" onClick={() => {setText(textDesc[1]); setDisplay('#dbeafe')}} >ทำเคมี</button>
+                <button data-aos="fade-up" className="w-full px-2 py-2 focus:bg-blue-200 md:px-12 bg-blue-100 text-blue-800 mb-10 cursor-pointer" data-aos-delay="150" onClick={() => {setText(textDesc[2]); setDisplay('#dbeafe')}}>ยืดผม</button>
+                <button data-aos="fade-up" className="w-full px-2 py-2 focus:bg-blue-200 md:px-12 bg-blue-100 text-blue-800 mb-10 cursor-pointer rounded-r-lg" data-aos-delay="150" onClick={() => {setText(textDesc[3]); setDisplay('#dbeafe')}}>ดัดผม</button>
             </div>
             <div className='flex justify-center text-xl flex-col'>
                 <div className='text-center px-4 lg:px-10' data-aos="fade-up">
-                    <p className='bg-white p-6 rounded-xl'>
+                    <p className='bg-white p-6 rounded-xl font-light'>
                         {text}
                     </p>
                 </div>
