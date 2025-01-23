@@ -9,6 +9,8 @@ import BoxColsIcon from "../components/BoxColsIcon";
 import NextSlider from "../components/NextSlider";
 import CardFull from "../components/CardFull";
 import { products, cardNews } from "../data/data";
+import { useState } from 'react';
+import Breadcrumb from '../components/Breadcrumb';
 
 const displayedCardNews = Object.values(cardNews).slice(0, 3);
 
@@ -19,28 +21,35 @@ const sliderImages = [
     { url: p4.src },
 ];
 
-const icon = <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 12 24"><defs><path id="weuiArrowOutlined0" fill="#000" d="m7.588 12.43l-1.061 1.06L.748 7.713a.996.996 0 0 1 0-1.413L6.527.52l1.06 1.06l-5.424 5.425z"/></defs><use fill-rule="evenodd" href="#weuiArrowOutlined0" transform="rotate(-180 5.02 9.505)"/></svg> 
-
 export default function page() {
+    const [isFilterOpen, setIsFilterOpen] = useState(false);
     return (
         <div>
-            <section className="breadcrumb text-sm py-3 mt-16 px-10 flex gap-2 items-center font-light">
-                <div>หน้าหลัก</div>
-                <div>{icon}</div>
-                <div className="text-blue-300">บริการของเรา</div>
+            <section className="py-4 mt-16 px-10 flex justify-between">
+                <Breadcrumb
+                    path2={"บริการของเรา"}
+                    pathLink2={"services"}
+                    path3={""}
+                    pathLink3={""}
+                    arrow={false}
+                    active={true}
+                />
+                <button className='rounded-full p-2 bg-blue-500 block lg:hidden' onClick={() => setIsFilterOpen(!isFilterOpen)}>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 16 16"><path fill="#fff" d="M6 1a3 3 0 0 0-2.83 2H0v2h3.17a3.001 3.001 0 0 0 5.66 0H16V3H8.83A3 3 0 0 0 6 1m4 8a3 3 0 0 0-2.83 2H0v2h7.17a3.001 3.001 0 0 0 5.66 0H16v-2h-3.17A3 3 0 0 0 10 9"/></svg>
+                </button>
             </section>
-            <section className="w-full flex gap-4 px-10">
-                <div className="fixed md:w-3/12 lg:static">
-                    <BoxFilter />
+            <section className="w-full flex items-start justify-start gap-4 px-10">
+                <div className={`lg:block fixed left-0 top-0 mt-16 lg:mt-0 w-full lg:static lg:w-3/12 z-10`}>
+                    <BoxFilter isOpen={isFilterOpen} setIsOpen={setIsFilterOpen} />
                 </div>
-                <div className="w-full p-3 gap-7 grid grid-cols-2 md:grid-cols-4 items-start">
+                <div className="w-full lg:p-3 gap-7 grid grid-cols-2 md:grid-cols-4 items-start">
                     {Object.values(products).map((product) => (
                         <CardProduct key={product.id} {...product} />
                     ))}
                 </div>
             </section>
             <section>
-                <TitleBtn text={"บทความที่เกี่ยวข้องกับบริการของเรา"}  />
+                <TitleBtn text={"บริการของเรา"}  />
                 <div className="flex md:flex-row flex-col items-start justify-between gap-10 pb-10 px-10">
                     {displayedCardNews.map(cardNew => (
                         <BigCardNews key={cardNew.id} {...cardNew} />

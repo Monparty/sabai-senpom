@@ -1,6 +1,11 @@
-export default function BoxFilter() {
+export default function BoxFilter({ isOpen, setIsOpen }) {
     return (
-        <div className="py-3 bg-white opacity-70">
+        <div className={`lg:block ${isOpen ? 'block' : 'hidden'} px-10 h-full lg:px-0 bg-white lg:py-3 border-b lg:border-b-0 overflow-y-scroll lg:overflow-y-hidden`}>
+            <div className="flex lg:hidden justify-end py-4">
+                <button className="p-2 rounded-full bg-slate-200" onClick={() => setIsOpen(false)}>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="#000000" d="m12 13.4l-4.9 4.9q-.275.275-.7.275t-.7-.275t-.275-.7t.275-.7l4.9-4.9l-4.9-4.9q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l4.9 4.9l4.9-4.9q.275-.275.7-.275t.7.275t.275.7t-.275.7L13.4 12l4.9 4.9q.275.275.275.7t-.275.7t-.7.275t-.7-.275z"/></svg>
+                </button>
+            </div>
             <div className="pb-5 border-b">
                 <select className="border w-full p-2 rounded-sm font-light text-sm">
                     <option className="font-light text-sm">-</option>
@@ -15,19 +20,19 @@ export default function BoxFilter() {
                     <div className="p-3 grid gap-1">
                         <div className="flex gap-2 items-center ">
                             <input type="checkbox" id="c1" className="accent-gray-100" />
-                            <label for="c1">menu1</label>
+                            <label for="c1" className="cursor-pointer">menu1</label>
                         </div>
                         <div className="flex gap-2 items-center ">
                             <input type="checkbox" id="c2" className="accent-gray-100" />
-                            <label for="c2">menu1</label>
+                            <label for="c2" className="cursor-pointer">menu2</label>
                         </div>
                         <div className="flex gap-2 items-center ">
                             <input type="checkbox" id="c3" className="accent-gray-100" />
-                            <label for="c3">menu1</label>
+                            <label for="c3" className="cursor-pointer">menu3</label>
                         </div>
                         <div className="flex gap-2 items-center ">
                             <input type="checkbox" id="c4" className="accent-gray-100" />
-                            <label for="c4">menu1</label>
+                            <label for="c4" className="cursor-pointer">menu4</label>
                         </div>
                     </div>
                 </details>
@@ -48,7 +53,7 @@ export default function BoxFilter() {
             <div className="py-5">
                 <details open className="border w-full p-2 rounded-sm font-light text-sm list-disc">
                     <summary className="list-none font-medium">สี</summary>
-                    <div className="p-3 grid grid-cols-6 gap-3">
+                    <div className="p-3 grid grid-cols-6 gap-4">
                         <button className="p-2 w-1 h-1 rounded-full cursor-pointer bg-black hover:bg-gray-500"></button>
                         <button className="p-2 w-1 h-1 rounded-full cursor-pointer bg-red-500 hover:bg-red-400"></button>
                         <button className="p-2 w-1 h-1 rounded-full cursor-pointer bg-blue-500 hover:bg-blue-400"></button>
