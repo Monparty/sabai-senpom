@@ -51,39 +51,6 @@ export const servicePrice = {
     }
 }
 
-export const products = {
-    product1: {
-        id: 1,
-        img: p1,
-        detail: 'ตัดเลเยอร์ ตัดปลาย ตัดซอย หรือการใช้กรรไกรหลายชนิดเพื่อให้ได้ทรงผมที่ต้องการ',
-        price: '500.00'
-    },
-    product2: {
-        id: 2,
-        img: p2,
-        detail: 'Infinity heart 14kk rose gnamel 14k rose gn 4k rose gnamel 14k rose gn',
-        price: '600.00'
-    },
-    product3: {
-        id: 3,
-        img: p3,
-        detail: 'ตัดเลเยอร์ ตัดปลาย ตัดซอย หรือการใช้กรรไกรหลายชนิดเพื่อให้ได้ทรงผมที่ต้องการ',
-        price: '700.00'
-    },
-    product4: {
-        id: 4,
-        img: p4,
-        detail: 'Infinity heart 14kk rose gnamel 14k rose gn 4k rose gnamel 14k rose gn',
-        price: '800.00'
-    },
-    product5: {
-        id: 5,
-        img: p1,
-        detail: 'ตัดเลเยอร์ ตัดปลาย ตัดซอย หรือการใช้กรรไกรหลายชนิดเพื่อให้ได้ทรงผมที่ต้องการ',
-        price: '900.00'
-    },
-}
-
 export const cardNews = {
     cardNew1: {
         id: 1,

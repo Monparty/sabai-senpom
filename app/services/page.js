@@ -8,11 +8,12 @@ import BigCardNews from "../components/BigCardNews";
 import BoxColsIcon from "../components/BoxColsIcon";
 import NextSlider from "../components/NextSlider";
 import CardFull from "../components/CardFull";
-import { products, cardNews } from "../data/data";
-import { useState } from 'react';
+import { cardNews } from "../data/data";
+import { services } from "../data/services";
+import { Suspense, useState } from 'react';
 import Breadcrumb from '../components/Breadcrumb';
 
-const displayedCardNews = Object.values(cardNews).slice(0, 3);
+export const displayedCardNews = Object.values(cardNews).slice(0, 3);
 
 const sliderImages = [
     { url: p1.src },
@@ -28,24 +29,27 @@ export default function page() {
             <section className="py-4 mt-16 px-10 flex justify-between">
                 <Breadcrumb
                     path2={"บริการของเรา"}
-                    pathLink2={"services"}
+                    pathLink2={"/services"}
                     path3={""}
                     pathLink3={""}
                     arrow={false}
-                    active={true}
+                    active2={true}
+                    active3={false}
                 />
                 <button className='rounded-full p-2 bg-blue-500 block lg:hidden' onClick={() => setIsFilterOpen(!isFilterOpen)}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 16 16"><path fill="#fff" d="M6 1a3 3 0 0 0-2.83 2H0v2h3.17a3.001 3.001 0 0 0 5.66 0H16V3H8.83A3 3 0 0 0 6 1m4 8a3 3 0 0 0-2.83 2H0v2h7.17a3.001 3.001 0 0 0 5.66 0H16v-2h-3.17A3 3 0 0 0 10 9"/></svg>
                 </button>
             </section>
-            <section className="w-full flex items-start justify-start gap-4 px-10">
+            <section className="w-full flex items-start justify-start gap-7 px-10">
                 <div className={`lg:block fixed left-0 top-0 mt-16 lg:mt-0 w-full lg:static lg:w-3/12 z-10`}>
                     <BoxFilter isOpen={isFilterOpen} setIsOpen={setIsFilterOpen} />
                 </div>
-                <div className="w-full lg:p-3 gap-7 grid grid-cols-2 md:grid-cols-4 items-start">
-                    {Object.values(products).map((product) => (
-                        <CardProduct key={product.id} {...product} />
-                    ))}
+                <div className="w-full gap-7 grid grid-cols-2 md:grid-cols-4 items-start">
+                    <Suspense fallback={<p>load...</p>}>
+                        {Object.values(services).map((service) => (
+                            <CardProduct key={service.id} {...service} />
+                        ))}
+                    </Suspense> 
                 </div>
             </section>
             <section>

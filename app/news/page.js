@@ -12,7 +12,8 @@ export default function page() {
                     path3={""}
                     pathLink3={""}
                     arrow={false}
-                    active={true}
+                    active2={true}
+                    active3={false}
                 />
             </section>
             <section className='px-10 pb-10'>

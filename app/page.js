@@ -111,7 +111,9 @@ export default function Home() {
       <div className="bg-blue-50">
         <TitleSection title1={'แผนที่ร้าน'} title2={'Sabai Senpom'} />
       </div>
-      <MapSection />
+      <div className="px-10 pb-10 bg-blue-50">
+        <MapSection />
+      </div>
     </div>
   );
 }

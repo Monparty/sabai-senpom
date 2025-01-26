@@ -1,6 +1,6 @@
 export default function BoxFilter({ isOpen, setIsOpen }) {
     return (
-        <div className={`lg:block ${isOpen ? 'block' : 'hidden'} px-10 h-full lg:px-0 bg-white lg:py-3 border-b lg:border-b-0 overflow-y-scroll lg:overflow-y-hidden`}>
+        <div className={`lg:block ${isOpen ? 'block' : 'hidden'} px-10 h-full lg:px-0 bg-white border-b lg:border-b-0 overflow-y-scroll lg:overflow-y-hidden`}>
             <div className="flex lg:hidden justify-end py-4">
                 <button className="p-2 rounded-full bg-slate-200" onClick={() => setIsOpen(false)}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="#000000" d="m12 13.4l-4.9 4.9q-.275.275-.7.275t-.7-.275t-.275-.7t.275-.7l4.9-4.9l-4.9-4.9q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l4.9 4.9l4.9-4.9q.275-.275.7-.275t.7.275t.275.7t-.275.7L13.4 12l4.9 4.9q.275.275.275.7t-.275.7t-.7.275t-.7-.275z"/></svg>
