@@ -1,6 +1,4 @@
 import Breadcrumb from '@/app/components/Breadcrumb';
-import CardProduct from '@/app/components/CardProduct';
-import { services } from '@/app/data/services';
 import Image from 'next/image';
 import Link from 'next/link';
 import BoxColsIcon from '@/app/components/BoxColsIcon';
@@ -40,9 +38,9 @@ export default async function ProductDetail({ params }) {
         </section>
         <section className='px-10'>
           <div className="w-full gap-7 grid grid-cols-2 md:grid-cols-4 items-start">
-            {Object.values(services).map((service) => (
+            {/* {Object.values(services).map((service) => (
                 <CardProduct key={service.id} {...service} />
-            ))}
+            ))} */}
             </div>
         </section>
         <section className='pt-10'>

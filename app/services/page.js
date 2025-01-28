@@ -1,17 +1,16 @@
 "use client"
+import { useState, useEffect } from 'react';
 import { p1, p2, p3, p4 } from '../public/exportImg';
 import TitleBtn from "../components/TitleBtn";
 import "@madzadev/image-slider/dist/index.css";
 import BoxFilter from "../components/BoxFilter";
-import CardProduct from "../components/CardProduct";
 import BigCardNews from "../components/BigCardNews";
 import BoxColsIcon from "../components/BoxColsIcon";
 import NextSlider from "../components/NextSlider";
 import CardFull from "../components/CardFull";
 import { cardNews } from "../data/data";
-import { services } from "../data/services";
-import { Suspense, useState } from 'react';
 import Breadcrumb from '../components/Breadcrumb';
+import CardProduct from '../components/CardProduct';
 
 export const displayedCardNews = Object.values(cardNews).slice(0, 3);
 
@@ -23,7 +22,18 @@ const sliderImages = [
 ];
 
 export default function page() {
-    const [isFilterOpen, setIsFilterOpen] = useState(false);
+    const [isFilterOpen, setIsFilterOpen] = useState(false)
+    const [data, setData] = useState(null);
+      
+    useEffect(() => {
+        const fetchData = async () => {
+        const response = await fetch('http://localhost:3000/api/services');
+        const json = await response.json();
+        setData(json);
+        };
+    
+        fetchData();
+    }, []);
     return (
         <div>
             <section className="py-4 mt-16 px-10 flex justify-between">
@@ -45,11 +55,13 @@ export default function page() {
                     <BoxFilter isOpen={isFilterOpen} setIsOpen={setIsFilterOpen} />
                 </div>
                 <div className="w-full gap-7 grid grid-cols-2 md:grid-cols-4 items-start">
-                    <Suspense fallback={<p>load...</p>}>
-                        {Object.values(services).map((service) => (
-                            <CardProduct key={service.id} {...service} />
-                        ))}
-                    </Suspense> 
+                {data ? (
+                    data && data.map((item, index) => (
+                        <CardProduct key={item.id} {...item} />
+                    ))
+                ) : (
+                    <div>Loading...</div>
+                )}
                 </div>
             </section>
             <section>
