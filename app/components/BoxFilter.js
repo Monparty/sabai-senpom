@@ -1,4 +1,4 @@
-export default function BoxFilter({ isOpen, setIsOpen }) {
+export default function BoxFilter({ isOpen, setIsOpen, setDisplay, display, allColor }) {
     return (
         <div className={`lg:block ${isOpen ? 'block' : 'hidden'} px-10 h-full lg:px-0 bg-white border-b lg:border-b-0 overflow-y-scroll lg:overflow-y-hidden`}>
             <div className="flex lg:hidden justify-end py-4">
@@ -9,30 +9,30 @@ export default function BoxFilter({ isOpen, setIsOpen }) {
             <div className="pb-5 border-b">
                 <select className="border w-full p-2 rounded-sm font-light text-sm">
                     <option className="font-light text-sm">-</option>
-                    <option className="font-light text-sm">111111</option>
-                    <option className="font-light text-sm">22222</option>
-                    <option className="font-light text-sm">3333333</option>
+                    <option className="font-light text-sm">แมวส้ม</option>
+                    <option className="font-light text-sm">แมวดำ</option>
+                    <option className="font-light text-sm">แมวขาว</option>
                 </select>
             </div>
             <div className="py-5 border-b">
                 <details open className="border w-full p-2 rounded-sm font-light text-sm list-disc">
                     <summary className="list-none font-medium">ตัวเลือก</summary>
                     <div className="p-3 grid gap-1">
-                        <div className="flex gap-2 items-center ">
-                            <input type="checkbox" id="c1" className="accent-gray-100" />
-                            <label for="c1" className="cursor-pointer">menu1</label>
+                        <div className="flex gap-2 items-center">
+                            <input name="c1" type="radio" id="c0" onChange={() => setDisplay(allColor)} className="accent-gray-500" />
+                            <label for="c0" className="cursor-pointer">ทั้งหมด</label>
                         </div>
                         <div className="flex gap-2 items-center ">
-                            <input type="checkbox" id="c2" className="accent-gray-100" />
-                            <label for="c2" className="cursor-pointer">menu2</label>
+                            <input name="c1" type="radio" onChange={() => setDisplay(allColor[0])} id="c1" className="accent-gray-500" />
+                            <label for="c1" className="cursor-pointer">สีส้ม</label>
                         </div>
                         <div className="flex gap-2 items-center ">
-                            <input type="checkbox" id="c3" className="accent-gray-100" />
-                            <label for="c3" className="cursor-pointer">menu3</label>
+                            <input name="c1" type="radio" onChange={() => setDisplay(allColor[1])} id="c2" className="accent-gray-500" />
+                            <label for="c2" className="cursor-pointer">สีดำ</label>
                         </div>
                         <div className="flex gap-2 items-center ">
-                            <input type="checkbox" id="c4" className="accent-gray-100" />
-                            <label for="c4" className="cursor-pointer">menu4</label>
+                            <input name="c1" type="radio" onChange={() => setDisplay(allColor[2])} id="c3" className="accent-gray-500" />
+                            <label for="c3" className="cursor-pointer">สีขาว</label>
                         </div>
                     </div>
                 </details>

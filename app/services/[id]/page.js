@@ -24,7 +24,7 @@ export default async function ProductDetail({ params }) {
         </section>
         <section className="flex flex-col md:flex-row w-full justify-between items-start px-10 mb-10 gap-10">
           <div className='w-full'>
-            <Image src={data.img} className='w-full rounded-md' />
+            <Image src={data.img} className='w-full h-80 object-cover rounded-md' />
           </div>
           <div className='w-full grid gap-6'>
             <h2 className='text-3xl font-medium'>{data.name}</h2>
@@ -35,13 +35,6 @@ export default async function ProductDetail({ params }) {
             </div>
             <QuestionSection question={'question'} answer={'answer'} />
           </div>
-        </section>
-        <section className='px-10'>
-          <div className="w-full gap-7 grid grid-cols-2 md:grid-cols-4 items-start">
-            {/* {Object.values(services).map((service) => (
-                <CardProduct key={service.id} {...service} />
-            ))} */}
-            </div>
         </section>
         <section className='pt-10'>
           <BoxColsIcon />

@@ -22,8 +22,10 @@ const sliderImages = [
 ];
 
 export default function page() {
+    let allColor = ['orange', 'white', 'black'];
     const [isFilterOpen, setIsFilterOpen] = useState(false)
     const [data, setData] = useState(null);
+    const [display, setDisplay] = useState(allColor );
       
     useEffect(() => {
         const fetchData = async () => {
@@ -52,12 +54,12 @@ export default function page() {
             </section>
             <section className="w-full flex items-start justify-start gap-7 px-10">
                 <div className={`lg:block fixed left-0 top-0 mt-16 lg:mt-0 w-full lg:static lg:w-3/12 z-10`}>
-                    <BoxFilter isOpen={isFilterOpen} setIsOpen={setIsFilterOpen} />
+                    <BoxFilter isOpen={isFilterOpen} setIsOpen={setIsFilterOpen} setDisplay={setDisplay} display={display} allColor={allColor} />
                 </div>
                 <div className="w-full gap-7 grid grid-cols-2 md:grid-cols-4 items-start">
                 {data ? (
                     data && data.map((item, index) => (
-                        <CardProduct key={item.id} {...item} />
+                        <CardProduct key={item.id} {...item} display={display} />
                     ))
                 ) : (
                     <div>Loading...</div>
